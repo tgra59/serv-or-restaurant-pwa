@@ -89,11 +89,16 @@ function App() {
       setNotification(`Order for ${identifier} saved!`)
       setTimeout(() => setNotification(null), 2000)
       
-      // Scroll to top smoothly after order finalization
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      })
+      // Scroll to top after modal closes and DOM updates
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        })
+        // Fallback method in case the first doesn't work
+        document.documentElement.scrollTop = 0
+        document.body.scrollTop = 0
+      }, 300)
     }
   }
 
