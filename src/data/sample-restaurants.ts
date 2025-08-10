@@ -1,0 +1,233 @@
+import { Restaurant } from '@/types';
+
+export const sampleRestaurants: Restaurant[] = [
+  {
+    id: '1',
+    name: 'Bistro Garden',
+    isActive: true,
+    menu: {
+      categories: [
+        {
+          id: 'appetizers',
+          name: 'Appetizers',
+          items: [
+            {
+              id: 'bruschetta',
+              name: 'Bruschetta',
+              description: 'Toasted bread with tomatoes, basil, and garlic',
+              categoryId: 'appetizers',
+              modifiers: [
+                {
+                  id: 'bread-type',
+                  name: 'Bread Type',
+                  type: 'single',
+                  required: true,
+                  options: [
+                    { id: 'sourdough', name: 'Sourdough' },
+                    { id: 'ciabatta', name: 'Ciabatta' },
+                    { id: 'baguette', name: 'Baguette' }
+                  ]
+                },
+                {
+                  id: 'extras',
+                  name: 'Extras',
+                  type: 'multiple',
+                  required: false,
+                  options: [
+                    { id: 'extra-basil', name: 'Extra Basil' },
+                    { id: 'extra-tomato', name: 'Extra Tomato' },
+                    { id: 'balsamic', name: 'Balsamic Glaze' }
+                  ]
+                }
+              ],
+              requiredModifiers: ['bread-type']
+            },
+            {
+              id: 'caesar-salad',
+              name: 'Caesar Salad',
+              description: 'Romaine lettuce with caesar dressing, croutons, and parmesan',
+              categoryId: 'appetizers',
+              modifiers: [
+                {
+                  id: 'size',
+                  name: 'Size',
+                  type: 'single',
+                  required: true,
+                  options: [
+                    { id: 'small', name: 'Small' },
+                    { id: 'large', name: 'Large' }
+                  ]
+                },
+                {
+                  id: 'add-ons',
+                  name: 'Add-ons',
+                  type: 'multiple',
+                  required: false,
+                  options: [
+                    { id: 'grilled-chicken', name: 'Grilled Chicken' },
+                    { id: 'bacon', name: 'Bacon' },
+                    { id: 'anchovies', name: 'Anchovies' }
+                  ]
+                }
+              ],
+              requiredModifiers: ['size']
+            }
+          ]
+        },
+        {
+          id: 'mains',
+          name: 'Main Courses',
+          items: [
+            {
+              id: 'pasta-carbonara',
+              name: 'Pasta Carbonara',
+              description: 'Creamy pasta with bacon, eggs, and parmesan cheese',
+              categoryId: 'mains',
+              modifiers: [
+                {
+                  id: 'pasta-type',
+                  name: 'Pasta Type',
+                  type: 'single',
+                  required: true,
+                  options: [
+                    { id: 'spaghetti', name: 'Spaghetti' },
+                    { id: 'fettuccine', name: 'Fettuccine' },
+                    { id: 'penne', name: 'Penne' }
+                  ]
+                },
+                {
+                  id: 'cooking',
+                  name: 'Cooking Preference',
+                  type: 'single',
+                  required: false,
+                  options: [
+                    { id: 'al-dente', name: 'Al Dente' },
+                    { id: 'well-done', name: 'Well Done' }
+                  ]
+                }
+              ],
+              requiredModifiers: ['pasta-type']
+            },
+            {
+              id: 'grilled-salmon',
+              name: 'Grilled Salmon',
+              description: 'Atlantic salmon with seasonal vegetables',
+              categoryId: 'mains',
+              modifiers: [
+                {
+                  id: 'temperature',
+                  name: 'Temperature',
+                  type: 'single',
+                  required: true,
+                  options: [
+                    { id: 'medium-rare', name: 'Medium Rare' },
+                    { id: 'medium', name: 'Medium' },
+                    { id: 'well-done', name: 'Well Done' }
+                  ]
+                },
+                {
+                  id: 'sides',
+                  name: 'Sides',
+                  type: 'multiple',
+                  required: false,
+                  options: [
+                    { id: 'rice', name: 'Rice' },
+                    { id: 'roasted-veggies', name: 'Roasted Vegetables' },
+                    { id: 'mashed-potatoes', name: 'Mashed Potatoes' }
+                  ]
+                }
+              ],
+              requiredModifiers: ['temperature']
+            }
+          ]
+        },
+        {
+          id: 'beverages',
+          name: 'Beverages',
+          items: [
+            {
+              id: 'coffee',
+              name: 'Coffee',
+              description: 'Freshly brewed coffee',
+              categoryId: 'beverages',
+              modifiers: [
+                {
+                  id: 'size',
+                  name: 'Size',
+                  type: 'single',
+                  required: true,
+                  options: [
+                    { id: 'small', name: 'Small' },
+                    { id: 'medium', name: 'Medium' },
+                    { id: 'large', name: 'Large' }
+                  ]
+                },
+                {
+                  id: 'milk',
+                  name: 'Milk Options',
+                  type: 'single',
+                  required: false,
+                  options: [
+                    { id: 'whole', name: 'Whole Milk' },
+                    { id: 'skim', name: 'Skim Milk' },
+                    { id: 'almond', name: 'Almond Milk' },
+                    { id: 'oat', name: 'Oat Milk' }
+                  ]
+                }
+              ],
+              requiredModifiers: ['size']
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: '2',
+    name: 'Fast Burger',
+    isActive: false,
+    menu: {
+      categories: [
+        {
+          id: 'burgers',
+          name: 'Burgers',
+          items: [
+            {
+              id: 'classic-burger',
+              name: 'Classic Burger',
+              description: 'Beef patty with lettuce, tomato, and onion',
+              categoryId: 'burgers',
+              modifiers: [
+                {
+                  id: 'cooking',
+                  name: 'How would you like it cooked?',
+                  type: 'single',
+                  required: true,
+                  options: [
+                    { id: 'rare', name: 'Rare' },
+                    { id: 'medium-rare', name: 'Medium Rare' },
+                    { id: 'medium', name: 'Medium' },
+                    { id: 'well-done', name: 'Well Done' }
+                  ]
+                },
+                {
+                  id: 'toppings',
+                  name: 'Toppings',
+                  type: 'multiple',
+                  required: false,
+                  options: [
+                    { id: 'cheese', name: 'Cheese' },
+                    { id: 'bacon', name: 'Bacon' },
+                    { id: 'pickles', name: 'Pickles' },
+                    { id: 'extra-sauce', name: 'Extra Sauce' }
+                  ]
+                }
+              ],
+              requiredModifiers: ['cooking']
+            }
+          ]
+        }
+      ]
+    }
+  }
+];

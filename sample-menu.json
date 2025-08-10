@@ -1,0 +1,123 @@
+{
+  "restaurantName": "Mario's Italian Bistro",
+  "menu": {
+    "categories": [
+      {
+        "name": "Appetizers",
+        "items": [
+          {
+            "name": "Bruschetta",
+            "description": "Toasted bread with tomatoes, basil, and garlic",
+            "modifiers": [
+              {
+                "name": "Size",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Small (4 pieces)" },
+                  { "name": "Large (8 pieces)" }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Caesar Salad",
+            "description": "Romaine lettuce with parmesan cheese and croutons",
+            "modifiers": [
+              {
+                "name": "Add Protein",
+                "type": "single",
+                "required": false,
+                "options": [
+                  { "name": "Grilled Chicken" },
+                  { "name": "Grilled Shrimp" },
+                  { "name": "No Protein" }
+                ]
+              },
+              {
+                "name": "Modifications",
+                "type": "multiple",
+                "required": false,
+                "options": [
+                  { "name": "No Croutons" },
+                  { "name": "Extra Parmesan" },
+                  { "name": "Dressing on Side" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Main Courses",
+        "items": [
+          {
+            "name": "Margherita Pizza",
+            "description": "Fresh mozzarella, tomatoes, and basil",
+            "modifiers": [
+              {
+                "name": "Size",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Personal (10\")" },
+                  { "name": "Medium (14\")" },
+                  { "name": "Large (18\")" }
+                ]
+              },
+              {
+                "name": "Extra Toppings",
+                "type": "multiple",
+                "required": false,
+                "options": [
+                  { "name": "Extra Cheese" },
+                  { "name": "Mushrooms" },
+                  { "name": "Pepperoni" },
+                  { "name": "Olives" }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Chicken Parmesan",
+            "description": "Breaded chicken breast with marinara sauce and mozzarella",
+            "modifiers": [
+              {
+                "name": "Side Dish",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Spaghetti" },
+                  { "name": "Penne" },
+                  { "name": "Garlic Bread" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Beverages",
+        "items": [
+          {
+            "name": "Italian Soda",
+            "description": "Sparkling water with fruit syrup",
+            "modifiers": [
+              {
+                "name": "Flavor",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Lemon" },
+                  { "name": "Orange" },
+                  { "name": "Cherry" },
+                  { "name": "Vanilla" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.65rem;
+    /* Light mode colors */
+    --background: 1 0 0;
+    --foreground: 0.141 0.005 285.823;
+    --card: 1 0 0;
+    --card-foreground: 0.141 0.005 285.823;
+    --popover: 1 0 0;
+    --popover-foreground: 0.141 0.005 285.823;
+    --primary: 0.723 0.219 149.579;
+    --primary-foreground: 0.982 0.018 155.826;
+    --secondary: 0.967 0.001 286.375;
+    --secondary-foreground: 0.21 0.006 285.885;
+    --muted: 0.967 0.001 286.375;
+    --muted-foreground: 0.552 0.016 285.938;
+    --accent: 0.967 0.001 286.375;
+    --accent-foreground: 0.21 0.006 285.885;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.982 0.018 155.826;
+    --border: 0.92 0.004 286.32;
+    --input: 0.92 0.004 286.32;
+    --ring: 0.723 0.219 149.579;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.141 0.005 285.823;
+    --sidebar-primary: 0.723 0.219 149.579;
+    --sidebar-primary-foreground: 0.982 0.018 155.826;
+    --sidebar-border: 0.92 0.004 286.32;
+  }
+
+  .dark {
+    /* Dark mode colors */
+    --background: 0.141 0.005 285.823;
+    --foreground: 0.985 0 0;
+    --card: 0.21 0.006 285.885;
+    --card-foreground: 0.985 0 0;
+    --popover: 0.21 0.006 285.885;
+    --popover-foreground: 0.985 0 0;
+    --primary: 0.723 0.219 149.579;
+    --primary-foreground: 0.982 0.018 155.826;
+    --secondary: 0.274 0.006 286.033;
+    --secondary-foreground: 0.985 0 0;
+    --muted: 0.274 0.006 286.033;
+    --muted-foreground: 0.705 0.015 286.067;
+    --accent: 0.274 0.006 286.033;
+    --accent-foreground: 0.985 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.982 0.018 155.826;
+    --border: 0.274 0.006 286.033;
+    --input: 0.274 0.006 286.033;
+    --ring: 0.723 0.219 149.579;
+    --sidebar: 0.141 0.005 285.823;
+    --sidebar-foreground: 0.985 0 0;
+    --sidebar-primary: 0.723 0.219 149.579;
+    --sidebar-primary-foreground: 0.982 0.018 155.826;
+    --sidebar-border: 0.274 0.006 286.033;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
