@@ -20,7 +20,8 @@ export default defineConfig({
         theme_color: '#723f66',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/',
+        start_url: '/serv-or-restaurant-pwa/',
+        scope: '/serv-or-restaurant-pwa/',
         icons: [
           {
             src: 'pwa-192x192.png',
