@@ -88,6 +88,12 @@ function App() {
     if (success) {
       setNotification(`Order for ${identifier} saved!`)
       setTimeout(() => setNotification(null), 2000)
+      
+      // Scroll to top smoothly after order finalization
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
     }
   }
 
