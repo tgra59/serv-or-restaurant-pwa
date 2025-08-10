@@ -6,6 +6,7 @@ import { useOrders } from './hooks/useOrders'
 import { useSearch } from './hooks/useSearch'
 import { useTheme } from './hooks/useTheme'
 import { ModifierModal } from './components/ModifierModal'
+import { OrderIdentifierModal } from './components/OrderIdentifierModal'
 import { Settings } from './components/Settings'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   const [showSearchSuggestions, setShowSearchSuggestions] = useState(false)
   const [searchInputRef, setSearchInputRef] = useState<HTMLInputElement | null>(null)
   const [showSettings, setShowSettings] = useState(false)
+  const [showOrderIdentifierModal, setShowOrderIdentifierModal] = useState(false)
   const [notification, setNotification] = useState<string | null>(null)
 
   const { activeRestaurant } = useRestaurants()
@@ -78,13 +80,14 @@ function App() {
 
   const handleFinalizeOrder = () => {
     if (currentOrder.length === 0) return
-    const identifier = prompt('Enter table number or customer name:')
-    if (identifier?.trim()) {
-      const success = finalizeOrder(identifier.trim())
-      if (success) {
-        setNotification(`Order for ${identifier} saved!`)
-        setTimeout(() => setNotification(null), 2000)
-      }
+    setShowOrderIdentifierModal(true)
+  }
+
+  const handleOrderIdentifierSubmit = (identifier: string) => {
+    const success = finalizeOrder(identifier)
+    if (success) {
+      setNotification(`Order for ${identifier} saved!`)
+      setTimeout(() => setNotification(null), 2000)
     }
   }
 
@@ -107,7 +110,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background ios-safe-area">
       <div className="max-w-2xl mx-auto p-4 min-h-screen flex flex-col" key={activeRestaurant?.id}>
         {/* Header */}
         <div className="bg-card border border-border rounded-lg p-6 mb-6 shadow-sm">
@@ -454,6 +457,13 @@ function App() {
         }}
         menuItem={selectedMenuItem}
         onAddToOrder={handleAddToOrder}
+      />
+
+      {/* Order Identifier Modal */}
+      <OrderIdentifierModal
+        isOpen={showOrderIdentifierModal}
+        onClose={() => setShowOrderIdentifierModal(false)}
+        onSubmit={handleOrderIdentifierSubmit}
       />
 
       {/* Settings Modal */}
