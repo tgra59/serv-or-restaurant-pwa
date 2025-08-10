@@ -1,0 +1,48 @@
+{
+  "id": "2",
+  "name": "Fast Burger",
+  "isActive": false,
+  "menu": {
+    "categories": [
+      {
+        "id": "burgers",
+        "name": "Burgers",
+        "items": [
+          {
+            "id": "classic-burger",
+            "name": "Classic Burger",
+            "description": "Beef patty with lettuce, tomato, and onion",
+            "categoryId": "burgers",
+            "modifiers": [
+              {
+                "id": "cooking",
+                "name": "How would you like it cooked?",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "id": "rare", "name": "Rare" },
+                  { "id": "medium-rare", "name": "Medium Rare" },
+                  { "id": "medium", "name": "Medium" },
+                  { "id": "well-done", "name": "Well Done" }
+                ]
+              },
+              {
+                "id": "toppings",
+                "name": "Toppings",
+                "type": "multiple",
+                "required": false,
+                "options": [
+                  { "id": "cheese", "name": "Cheese" },
+                  { "id": "bacon", "name": "Bacon" },
+                  { "id": "pickles", "name": "Pickles" },
+                  { "id": "extra-sauce", "name": "Extra Sauce" }
+                ]
+              }
+            ],
+            "requiredModifiers": ["cooking"]
+          }
+        ]
+      }
+    ]
+  }
+}

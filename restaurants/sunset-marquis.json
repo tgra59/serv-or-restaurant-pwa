@@ -1,0 +1,98 @@
+{
+  "id": "3",
+  "name": "Sunset Marquis",
+  "isActive": true,
+  "menu": {
+    "categories": [
+      {
+        "id": "cocktails",
+        "name": "Cocktails",
+        "items": [
+          {
+            "id": "rosey-cheeks",
+            "name": "Rosey Cheeks",
+            "description": "Bourbon, Grapefruit Juice, Monin Rose Syrup, Select Aperitivo",
+            "categoryId": "cocktails",
+            "modifiers": []
+          },
+          {
+            "id": "sunset-marquis-lemonade",
+            "name": "Sunset Marquis Lemonade",
+            "description": "Vodka, Lemonade, Sandeman's Ruby Port",
+            "categoryId": "cocktails",
+            "modifiers": []
+          },
+          {
+            "id": "choice-of-spritz",
+            "name": "Choice of Spritz",
+            "description": "Choice of Aperol/Campari/St Germain/Lillet Aperitif and Sparkling Brut",
+            "categoryId": "cocktails",
+            "modifiers": [
+              {
+                "id": "aperitif-choice",
+                "name": "Aperitif Choice",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "id": "aperol", "name": "Aperol" },
+                  { "id": "campari", "name": "Campari" },
+                  { "id": "st-germain", "name": "St Germain" },
+                  { "id": "lillet", "name": "Lillet" }
+                ]
+              }
+            ],
+            "requiredModifiers": ["aperitif-choice"]
+          }
+        ]
+      },
+      {
+        "id": "appetizers",
+        "name": "Appetizers",
+        "items": [
+          {
+            "id": "togarashi-potato-chips",
+            "name": "Togarashi Potato Chips",
+            "description": "Spicy onion dip (Gluten Free, Vegetarian)",
+            "categoryId": "appetizers",
+            "modifiers": []
+          },
+          {
+            "id": "guacamole",
+            "name": "Guacamole",
+            "description": "Red chile sauce, toasted pepita, tostadas (Gluten Free, Vegan)",
+            "categoryId": "appetizers",
+            "modifiers": []
+          }
+        ]
+      },
+      {
+        "id": "entrees",
+        "name": "Entrees",
+        "items": [
+          {
+            "id": "sunset-wagyu-cheeseburger",
+            "name": "Sunset Wagyu Cheeseburger",
+            "description": "Smoked pickle dressing, bacon, aged cheddar, lettuce, tomato",
+            "categoryId": "entrees",
+            "modifiers": [
+              {
+                "id": "temperature",
+                "name": "Temperature",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "id": "rare", "name": "Rare" },
+                  { "id": "medium-rare", "name": "Medium Rare" },
+                  { "id": "medium", "name": "Medium" },
+                  { "id": "medium-well", "name": "Medium Well" },
+                  { "id": "well-done", "name": "Well Done" }
+                ]
+              }
+            ],
+            "requiredModifiers": ["temperature"]
+          }
+        ]
+      }
+    ]
+  }
+}
