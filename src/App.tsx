@@ -20,7 +20,7 @@ function App() {
   const [showOrderIdentifierModal, setShowOrderIdentifierModal] = useState(false)
   const [notification, setNotification] = useState<string | null>(null)
 
-  const { activeRestaurant } = useRestaurants()
+  const { activeRestaurant, isLoading } = useRestaurants()
   useTheme() // Initialize theme on app startup
   const { 
     activeOrders, 
@@ -118,6 +118,18 @@ function App() {
     const diffHours = Math.floor(diffMins / 60)
     if (diffHours === 1) return '1 hour ago'
     return `${diffHours} hours ago`
+  }
+
+  // Show loading state while restaurants are being loaded
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background ios-safe-area flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading restaurants...</p>
+        </div>
+      </div>
+    );
   }
 
   return (

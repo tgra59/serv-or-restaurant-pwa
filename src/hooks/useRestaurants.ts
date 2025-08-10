@@ -1,14 +1,53 @@
-import { useMemo } from 'react';
+import { useMemo, useEffect, useState } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import type { Restaurant, AppSettings } from '../types';
-import { sampleRestaurants } from '../data/sampleData';
+import { loadRestaurantsFromJSON } from '../utils/restaurantLoader';
 
 export function useRestaurants() {
-  const [restaurants, setRestaurants] = useLocalStorage<Restaurant[]>('restaurants', sampleRestaurants);
+  const [restaurants, setRestaurants] = useLocalStorage<Restaurant[]>('restaurants', []);
+  const [isLoading, setIsLoading] = useState(true);
   const [settings, setSettings] = useLocalStorage<AppSettings>('settings', {
-    activeRestaurantId: sampleRestaurants[0]?.id || null,
+    activeRestaurantId: null,
     lastReset: new Date()
   });
+
+  // Load restaurants from JSON files on first mount
+  useEffect(() => {
+    let isMounted = true;
+    
+    const loadRestaurants = async () => {
+      try {
+        const loadedRestaurants = await loadRestaurantsFromJSON();
+        if (isMounted && loadedRestaurants.length > 0) {
+          // Only update if we don't already have restaurants or if the loaded ones are different
+          setRestaurants(prev => {
+            if (prev.length === 0) {
+              return loadedRestaurants;
+            }
+            return prev;
+          });
+          
+          // Set first restaurant as active if none is selected
+          setSettings(prev => ({
+            ...prev,
+            activeRestaurantId: prev.activeRestaurantId || loadedRestaurants[0]?.id || null
+          }));
+        }
+      } catch (error) {
+        console.error('Failed to load restaurants:', error);
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    loadRestaurants();
+    
+    return () => {
+      isMounted = false;
+    };
+  }, []); // Only run once on mount
 
   const activeRestaurant = useMemo(() => 
     restaurants.find(r => r.id === settings.activeRestaurantId) || restaurants[0] || null,
@@ -44,6 +83,7 @@ export function useRestaurants() {
     restaurants,
     activeRestaurant,
     settings,
+    isLoading,
     setActiveRestaurant,
     addRestaurant,
     updateRestaurant,
