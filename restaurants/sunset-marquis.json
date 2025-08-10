@@ -5,91 +5,456 @@
   "menu": {
     "categories": [
       {
-        "id": "cocktails",
         "name": "Cocktails",
         "items": [
           {
-            "id": "rosey-cheeks",
             "name": "Rosey Cheeks",
             "description": "Bourbon, Grapefruit Juice, Monin Rose Syrup, Select Aperitivo",
-            "categoryId": "cocktails",
             "modifiers": []
           },
           {
-            "id": "sunset-marquis-lemonade",
             "name": "Sunset Marquis Lemonade",
             "description": "Vodka, Lemonade, Sandeman's Ruby Port",
-            "categoryId": "cocktails",
             "modifiers": []
           },
           {
-            "id": "choice-of-spritz",
             "name": "Choice of Spritz",
             "description": "Choice of Aperol/Campari/St Germain/Lillet Aperitif and Sparkling Brut",
-            "categoryId": "cocktails",
             "modifiers": [
               {
-                "id": "aperitif-choice",
                 "name": "Aperitif Choice",
                 "type": "single",
                 "required": true,
                 "options": [
-                  { "id": "aperol", "name": "Aperol" },
-                  { "id": "campari", "name": "Campari" },
-                  { "id": "st-germain", "name": "St Germain" },
-                  { "id": "lillet", "name": "Lillet" }
+                  { "name": "Aperol" },
+                  { "name": "Campari" },
+                  { "name": "St Germain" },
+                  { "name": "Lillet" }
                 ]
               }
-            ],
-            "requiredModifiers": ["aperitif-choice"]
-          }
-        ]
-      },
-      {
-        "id": "appetizers",
-        "name": "Appetizers",
-        "items": [
+            ]
+          },
           {
-            "id": "togarashi-potato-chips",
-            "name": "Togarashi Potato Chips",
-            "description": "Spicy onion dip (Gluten Free, Vegetarian)",
-            "categoryId": "appetizers",
+            "name": "Spice is Nice",
+            "description": "Jalapeno Tequila, Lime Juice, Cointreau, Agave",
             "modifiers": []
           },
           {
-            "id": "guacamole",
-            "name": "Guacamole",
-            "description": "Red chile sauce, toasted pepita, tostadas (Gluten Free, Vegan)",
-            "categoryId": "appetizers",
+            "name": "Island Vacation",
+            "description": "Coconut Rum, Bacardi Rum, Pineapple, Lime Juice",
+            "modifiers": []
+          },
+          {
+            "name": "Summer's Tragedy",
+            "description": "Gin, Lemon Juice, Juliette Liquor, Simple Syrup",
+            "modifiers": []
+          },
+          {
+            "name": "Sunset Caipirinha",
+            "description": "Cachaça, Sugar cane, Limes",
             "modifiers": []
           }
         ]
       },
       {
-        "id": "entrees",
+        "name": "Frosé & RTD Cocktails",
+        "items": [
+          {
+            "name": "Frosé Cocktails",
+            "description": "Ask your server for details",
+            "modifiers": []
+          },
+          {
+            "name": "RTD Cocktails",
+            "description": "Ask your server for details",
+            "modifiers": []
+          }
+        ]
+      },
+      {
+        "name": "Mocktails",
+        "items": [
+          {
+            "name": "Detox",
+            "description": "Orgeat, Orange Juice, Club Soda",
+            "modifiers": []
+          },
+          {
+            "name": "Zero Proof",
+            "description": "\"Aperol\" Spritz - French Bloom & Giffard Aperitif",
+            "modifiers": []
+          },
+          {
+            "name": "Rosemary Paloma",
+            "description": "Seedlips, Grapefruit, Rosemary Tonic",
+            "modifiers": []
+          },
+          {
+            "name": "N/A Amaro Lucano",
+            "description": "Served over Big Rock & Orange Twist",
+            "modifiers": []
+          }
+        ]
+      },
+      {
+        "name": "Non-Alcoholic Beverages",
+        "items": [
+          {
+            "name": "Green Detox",
+            "description": "Fresh green juice blend",
+            "modifiers": []
+          },
+          {
+            "name": "Gingersnap",
+            "description": "Ginger-based refreshing drink",
+            "modifiers": []
+          },
+          {
+            "name": "Water",
+            "description": "Premium bottled water",
+            "modifiers": [
+              {
+                "name": "Type",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "San Pellegrino Sparkling (500ml)" },
+                  { "name": "Acqua Panna Still (500ml)" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Beer",
+        "items": [
+          {
+            "name": "Domestic Beer",
+            "description": "Selection of domestic beers",
+            "modifiers": [
+              {
+                "name": "Beer Choice",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Allagash White Belgian-Style Wheat" },
+                  { "name": "Budweiser" },
+                  { "name": "Golden Road Mango Cart Wheat Ale" },
+                  { "name": "Lagunitas IPA" },
+                  { "name": "Boomtown Mic Czech Pilsner (16 oz)" },
+                  { "name": "Sincere Dry Cider (16 oz)" }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Import Beer",
+            "description": "Selection of imported beers",
+            "modifiers": [
+              {
+                "name": "Beer Choice",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Heineken Zero" },
+                  { "name": "Stella Artois" },
+                  { "name": "Corona Extra" },
+                  { "name": "Guinness Draught" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sparkling Wine",
+        "items": [
+          {
+            "name": "Sparkling Wine",
+            "description": "Premium sparkling wine selection",
+            "modifiers": [
+              {
+                "name": "Wine Choice",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Nicolas Feuillatte Brut NV, FR" },
+                  { "name": "Bouvet Ladubay Brut, Loire, FR" },
+                  { "name": "Surfrider Sparkling Rosé NV, CA" },
+                  { "name": "Veuve Clicquot \"Yellow Label\" Brut (375ml)" }
+                ]
+              },
+              {
+                "name": "Serving Size",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Glass" },
+                  { "name": "Bottle" }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Organic Sparkling Wine (Alcohol Free)",
+            "description": "Non-alcoholic sparkling wine options",
+            "modifiers": [
+              {
+                "name": "Wine Choice",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "French Bloom Le Blanc, FR" },
+                  { "name": "French Bloom Le Rosé, FR" }
+                ]
+              },
+              {
+                "name": "Serving Size",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Glass" },
+                  { "name": "Bottle" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "White Wine",
+        "items": [
+          {
+            "name": "Light/Medium Body White Wines",
+            "description": "Crisp and refreshing white wines",
+            "modifiers": [
+              {
+                "name": "Wine Choice",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Riesling, Fess Parker, Santa Barbara, CA" },
+                  { "name": "Pinot Grigio, Terra Alpina, Dolomiti, IT" },
+                  { "name": "Sauvignon Blanc, Frenzy, Marlborough" }
+                ]
+              },
+              {
+                "name": "Serving Size",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Glass" },
+                  { "name": "Bottle" }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Fuller Body White Wines",
+            "description": "Rich and complex white wines",
+            "modifiers": [
+              {
+                "name": "Wine Choice",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Cortese, Villa Sparina, Gavi, Piedmont, IT" },
+                  { "name": "Chardonnay, OneHope, CA" }
+                ]
+              },
+              {
+                "name": "Serving Size",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Glass" },
+                  { "name": "Bottle" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Rosé Wine",
+        "items": [
+          {
+            "name": "Rosé Wine",
+            "description": "Premium rosé wine selection",
+            "modifiers": [
+              {
+                "name": "Wine Choice",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Finco Nueva Rosado, Rioja, SP" },
+                  { "name": "Saint Pons Rosé, Côtes de Provence, FR" }
+                ]
+              },
+              {
+                "name": "Serving Size",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Glass" },
+                  { "name": "Bottle" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Red Wine",
+        "items": [
+          {
+            "name": "Pinot Noir",
+            "description": "Elegant and smooth Pinot Noir",
+            "modifiers": [
+              {
+                "name": "Wine Choice",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Au Bon Climat, Santa Barbara, CA" }
+                ]
+              },
+              {
+                "name": "Serving Size",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Glass" },
+                  { "name": "Bottle" }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Cool Reds",
+            "description": "Medium-bodied red wines",
+            "modifiers": [
+              {
+                "name": "Wine Choice",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Chianti Classico, Felsina Berardenga, IT" }
+                ]
+              },
+              {
+                "name": "Serving Size",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Glass" },
+                  { "name": "Bottle" }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Cabernet Sauvignon & Blends",
+            "description": "Bold and full-bodied red wines",
+            "modifiers": [
+              {
+                "name": "Wine Choice",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Chateau Bellgrave, St. Emilion, Bordeaux" },
+                  { "name": "OneHope Red Blend, CA" }
+                ]
+              },
+              {
+                "name": "Serving Size",
+                "type": "single",
+                "required": true,
+                "options": [
+                  { "name": "Glass" },
+                  { "name": "Bottle" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Appetizers",
+        "items": [
+          {
+            "name": "Togarashi Potato Chips",
+            "description": "Spicy onion dip (Gluten Free, Vegetarian)",
+            "modifiers": []
+          },
+          {
+            "name": "Guacamole",
+            "description": "Red chile sauce, toasted pepita, tostadas (Gluten Free, Vegan)",
+            "modifiers": []
+          },
+          {
+            "name": "Chilled Colossal Prawns",
+            "description": "Yuzu kosho-cocktail sauce (Gluten Free)",
+            "modifiers": []
+          },
+          {
+            "name": "Little Gem Caesar",
+            "description": "Black pepper, white anchovy, croutons",
+            "modifiers": []
+          },
+          {
+            "name": "Sunset Spread",
+            "description": "Coconut yogurt tzatziki, edamame hummus, beet muhammara, crudité, olives, pita (Vegetarian)",
+            "modifiers": []
+          }
+        ]
+      },
+      {
         "name": "Entrees",
         "items": [
           {
-            "id": "sunset-wagyu-cheeseburger",
+            "name": "Alta Loma Club Sandwich",
+            "description": "Roasted turkey, bacon, bibb lettuce, tomato, chipotle",
+            "modifiers": []
+          },
+          {
+            "name": "Sunset Cobb",
+            "description": "Chicken, avocado, bacon, blue cheese, egg (Gluten Free)",
+            "modifiers": []
+          },
+          {
+            "name": "House Ground Veggie Burger",
+            "description": "Napa cabbage, spicy cashew mayo, secret sauce, togarashi fries (Vegan)",
+            "modifiers": []
+          },
+          {
             "name": "Sunset Wagyu Cheeseburger",
             "description": "Smoked pickle dressing, bacon, aged cheddar, lettuce, tomato",
-            "categoryId": "entrees",
             "modifiers": [
               {
-                "id": "temperature",
                 "name": "Temperature",
                 "type": "single",
                 "required": true,
                 "options": [
-                  { "id": "rare", "name": "Rare" },
-                  { "id": "medium-rare", "name": "Medium Rare" },
-                  { "id": "medium", "name": "Medium" },
-                  { "id": "medium-well", "name": "Medium Well" },
-                  { "id": "well-done", "name": "Well Done" }
+                  { "name": "Rare" },
+                  { "name": "Medium Rare" },
+                  { "name": "Medium" },
+                  { "name": "Medium Well" },
+                  { "name": "Well Done" }
                 ]
               }
-            ],
-            "requiredModifiers": ["temperature"]
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dessert",
+        "items": [
+          {
+            "name": "Warm Chocolate Chip Cookies",
+            "description": "Freshly baked warm chocolate chip cookies",
+            "modifiers": []
           }
         ]
       }
