@@ -5,6 +5,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/serv-or-restaurant-pwa/',
   plugins: [
     react(),
     VitePWA({
