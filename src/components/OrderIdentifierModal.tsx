@@ -11,14 +11,30 @@ export function OrderIdentifierModal({ isOpen, onClose, onSubmit }: OrderIdentif
   const [identifier, setIdentifier] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Auto-focus input when modal opens
+  // Auto-focus input when modal opens - enhanced for mobile
   useEffect(() => {
     if (isOpen && inputRef.current) {
-      // Small delay to ensure modal is fully rendered
-      const timer = setTimeout(() => {
-        inputRef.current?.focus();
-      }, 100);
-      return () => clearTimeout(timer);
+      // Multiple attempts to ensure mobile keyboard appears
+      const focusInput = () => {
+        if (inputRef.current) {
+          inputRef.current.focus();
+          inputRef.current.click(); // Additional trigger for mobile
+        }
+      };
+
+      // Immediate focus
+      focusInput();
+      
+      // Delayed focus for better mobile compatibility
+      const timer1 = setTimeout(focusInput, 50);
+      const timer2 = setTimeout(focusInput, 200);
+      const timer3 = setTimeout(focusInput, 500);
+      
+      return () => {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
+      };
     }
   }, [isOpen]);
 
@@ -74,6 +90,9 @@ export function OrderIdentifierModal({ isOpen, onClose, onSubmit }: OrderIdentif
               className="w-full px-3 py-3 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
               placeholder="e.g., Table 5 or John Doe"
               autoComplete="off"
+              autoFocus
+              inputMode="text"
+              enterKeyHint="done"
             />
           </div>
           

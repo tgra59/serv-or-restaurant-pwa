@@ -17,7 +17,7 @@ export default defineConfig({
         name: 'SERV-OR',
         short_name: 'SERV-OR',
         description: 'Restaurant Order Management PWA',
-        theme_color: '#723f66',
+        theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
         start_url: '/serv-or-restaurant-pwa/',

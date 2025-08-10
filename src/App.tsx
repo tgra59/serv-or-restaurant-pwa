@@ -373,7 +373,11 @@ function App() {
         )}
 
         {/* Order Summary */}
-        <div className="bg-card border border-border rounded-lg p-6 mt-auto shadow-sm">
+        <div className={`rounded-lg p-6 mt-auto shadow-lg transition-all duration-200 ${
+          currentOrder.length > 0 
+            ? 'bg-primary/10 border-2 border-primary/30 ring-1 ring-primary/20' 
+            : 'bg-card border border-border'
+        }`}>
           <div className="flex justify-between items-center mb-4 pb-4 border-b border-border">
             <h3 className="font-semibold">
               Current Order 
