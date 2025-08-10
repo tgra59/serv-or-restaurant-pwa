@@ -1,0 +1,1 @@
+{"name":"SERV-OR","short_name":"SERV-OR","description":"Restaurant Order Management PWA","start_url":"/","display":"standalone","background_color":"#ffffff","theme_color":"#723f66","lang":"en","scope":"/serv-or-restaurant-pwa/","icons":[{"src":"pwa-192x192.png","sizes":"192x192","type":"image/png"},{"src":"pwa-512x512.png","sizes":"512x512","type":"image/png"}]}
