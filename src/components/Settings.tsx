@@ -3,7 +3,7 @@ import { ArrowLeft, Building2, Menu, Utensils, Plus, Edit, Trash2, Check, X, Pal
 import { useRestaurants } from '../hooks/useRestaurants';
 import { useTheme } from '../hooks/useTheme';
 import { ItemEditor } from './ItemEditor';
-import type { Restaurant, MenuItem, Modifier, ModifierOption } from '../types';
+import type { Restaurant, MenuItem } from '../types';
 
 interface SettingsProps {
   onClose: () => void;
@@ -16,7 +16,6 @@ export function Settings({ onClose }: SettingsProps) {
   const { theme, setTheme } = useTheme();
   const [currentView, setCurrentView] = useState<SettingsView>('main');
   const [editingItem, setEditingItem] = useState<MenuItem | null>(null);
-  const [editingModifier, setEditingModifier] = useState<Modifier | null>(null);
   const [newRestaurantName, setNewRestaurantName] = useState('');
   const [showAddRestaurant, setShowAddRestaurant] = useState(false);
   const [importError, setImportError] = useState<string | null>(null);

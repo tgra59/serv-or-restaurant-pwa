@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X, Plus, Minus } from 'lucide-react';
-import type { MenuItem, Modifier, SelectedModifier } from '../types';
+import type { MenuItem, SelectedModifier } from '../types';
 
 interface ModifierModalProps {
   isOpen: boolean;

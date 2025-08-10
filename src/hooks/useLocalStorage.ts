@@ -13,7 +13,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
 
   // Listen for localStorage changes from other components
   useEffect(() => {
-    const handleStorageChange = (event?: StorageEvent) => {
+    const handleStorageChange = () => {
       try {
         const item = window.localStorage.getItem(key);
         const newValue = item ? JSON.parse(item) : initialValue;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ArrowLeft, Plus, X, Trash2, Check, Edit } from 'lucide-react';
 import type { MenuItem, Modifier, ModifierOption, Restaurant } from '../types';
 
@@ -21,7 +21,6 @@ export function ItemEditor({ item, restaurant, onSave, onCancel, onDelete, isNew
   }));
   
   const [editingModifier, setEditingModifier] = useState<Modifier | null>(null);
-  const [showAddModifier, setShowAddModifier] = useState(false);
 
   const handleSave = () => {
     if (!editedItem.name.trim() || !editedItem.description.trim()) {
@@ -40,7 +39,6 @@ export function ItemEditor({ item, restaurant, onSave, onCancel, onDelete, isNew
       options: []
     };
     setEditingModifier(newModifier);
-    setShowAddModifier(false);
   };
 
   const handleSaveModifier = (modifier: Modifier) => {

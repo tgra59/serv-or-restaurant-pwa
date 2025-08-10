@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Search, Settings as SettingsIcon, X } from 'lucide-react'
-import type { ViewMode, MenuItem } from './types'
+import type { MenuItem } from './types'
 import { useRestaurants } from './hooks/useRestaurants'
 import { useOrders } from './hooks/useOrders'
 import { useSearch } from './hooks/useSearch'
