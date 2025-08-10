@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Documentation and development files
+CLAUDE.md
+MENU_JSON_FORMAT.md
+README.md
+sample-menu.json
+*.bak
+
+# Keep only essential app files
